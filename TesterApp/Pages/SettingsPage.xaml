@@ -1,0 +1,35 @@
+<Page x:Class="TesterApp.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:controls="clr-namespace:Cobalt.WpfUi.Controls;assembly=Cobalt.WpfUi"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      x:Name="Page">
+    <Grid>
+        
+        <controls:GroupBox Header="Theme"
+                           Margin="20">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox ItemsSource="{Binding ViewModel.ApplicationThemes ,ElementName=Page}"
+                          SelectedItem="{Binding ViewModel.SelectedApplicationTheme ,ElementName=Page}"
+                          DisplayMemberPath="Name"
+                          Margin="0 0 10 0"/>
+                
+                <ComboBox ItemsSource="{Binding ViewModel.WindowBackdropTypes ,ElementName=Page}"
+                          SelectedItem="{Binding ViewModel.SelectedWindowBackdropType ,ElementName=Page}"
+                          DisplayMemberPath="Name"
+                          Margin="0 0 10 0"/>
+                
+                <ui:Button Appearance="Primary"
+                           Content="Apply"
+                           Command="{Binding ViewModel.SetThemeCommand ,ElementName=Page}"/>
+            </StackPanel> 
+        </controls:GroupBox>
+        
+    </Grid>
+</Page>

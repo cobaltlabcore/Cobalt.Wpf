@@ -1,0 +1,117 @@
+<Page x:Class="TesterApp.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:controls="clr-namespace:Cobalt.WpfUi.Controls;assembly=Cobalt.WpfUi"
+      xmlns:editors="clr-namespace:Cobalt.WpfUi.Controls.Editors;assembly=Cobalt.WpfUi"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      ScrollViewer.CanContentScroll="False"
+      x:Name="Page">
+    
+    <!-- NOTE: By default with WPF-UI, the page's vertical scrollbar is only displayed when the user is scrolling.
+    To change this behavior, add ScrollViewer.CanContentScroll="False" in the page and add a ScrollViewer in the page
+    content.
+    To make the scroll smooth, do not use a StackPanel, use an ItemsControl with a VirtualizingStackPanel instead -->
+    
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl ScrollViewer.CanContentScroll="False">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <controls:GroupBox Header="Content dialogs"
+                                   Margin="20">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:Button Content="Show simple dialog"
+                                   Command="{Binding ViewModel.ShowSimpleDialogCommand ,ElementName=Page}"/> 
+                        
+                    </StackPanel>
+                </controls:GroupBox>
+                
+                <controls:GroupBox Header="Overlay"
+                                   Margin="20 0 20 20">
+                    <ui:Button Content="Show"
+                               Command="{Binding ViewModel.ShowOverlayCommand ,ElementName=Page}" />
+                </controls:GroupBox>
+                
+                <controls:GroupBox Header="Info bar"
+                                   Margin="20 0 20 20">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:Button Content="Show"
+                                   Command="{Binding ViewModel.ShowInfoBarCommand ,ElementName=Page}"
+                                   Margin="0 0 10 0"/>
+                        <ui:Button Content="Hide"
+                                   Command="{Binding ViewModel.HideInfoBarCommand ,ElementName=Page}"/>
+                    </StackPanel>
+                </controls:GroupBox>
+                
+                <controls:GroupBox Header="Snackbar"
+                                   Margin="20 0 20 20">
+                    <ui:Button Content="Show"
+                               Command="{Binding ViewModel.ShowSnackbarCommand ,ElementName=Page}" />
+                </controls:GroupBox>
+                
+                <controls:GroupBox Header="Editors"
+                                   Margin="20 0 20 20">
+                    <StackPanel>
+                        <editors:TextEditor Title="Name"
+                                            Value="{Binding ViewModel.LastName, ElementName=Page}"
+                                            Margin="0 0 0 10" />
+                        
+                        <editors:UIntEditor Title="Age"
+                                            Value="{Binding ViewModel.Age, ElementName=Page}"
+                                            Margin="0 0 0 10"
+                                            Suffix="years old"/>
+                        
+                        <editors:FileEditor Title="Image file path"
+                                            Value="{Binding ViewModel.ImageFilePath, ElementName=Page}"
+                                            Margin="0 0 0 10"
+                                            Filter="Image file(*.jpg)|*.jpg"/>
+                        
+                        <editors:FolderEditor Title="Folder path"
+                                              Value="{Binding ViewModel.FolderPath, ElementName=Page}"
+                                              Margin="0 0 0 10"
+                                              InitialFolder="C:\" />
+                        
+                        <editors:DataEditor Title="Hexadecimal data"
+                                            Value="{Binding ViewModel.Data, ElementName=Page}"
+                                            Margin="0 0 0 10" />
+                        
+                        <editors:DataEditor x:Name="Base64Editor" Title="Base64 data"
+                                            DataEncoding="Base64"
+                                            Value="{Binding ViewModel.Data, ElementName=Page}"
+                                            Margin="0 0 0 10">
+                            <editors:DataEditor.Buttons>
+                                <ui:Button Command="{Binding ClearCommand, ElementName=Base64Editor}"
+                                           Icon="{ui:SymbolIcon Dismiss24, FontSize=18}"
+                                           ToolTip="Clear"/>
+                            </editors:DataEditor.Buttons>
+                        </editors:DataEditor>
+                        
+                        <editors:TextEditor Title="Address"
+                                            Value="{Binding ViewModel.Address, ElementName=Page}"
+                                            Margin="0 0 0 10"
+                                            AcceptsReturn="True"
+                                            TextBoxHeight="100"
+                                            ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+                        
+                        <editors:DoubleEditor Title="Test"
+                                              Value="{Binding ViewModel.Test, ElementName=Page}"
+                                              Margin="0 0 0 10"
+                                              AcceptsReturn="True"
+                                              TextBoxHeight="60"/>
+                    </StackPanel>
+                </controls:GroupBox>
+            </ItemsControl>
+        </ScrollViewer> 
+    </Grid>
+</Page>

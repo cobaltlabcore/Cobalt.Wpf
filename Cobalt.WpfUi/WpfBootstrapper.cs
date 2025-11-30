@@ -112,7 +112,7 @@ public class WpfBootstrapper : Bootstrapper
             var themesDictionary = new ThemesDictionary();
             
             // Add Cobalt.WpfUi dictionaries
-            var sbControlsDictionary = new SharpBytesControlsDictionary();
+            var sbControlsDictionary = new CobaltControlsDictionary();
             
             // Merge the dictionaries into the application resources
             Application.Current.Resources.MergedDictionaries.Add(controlsDictionary);

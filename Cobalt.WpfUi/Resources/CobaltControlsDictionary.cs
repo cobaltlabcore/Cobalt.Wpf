@@ -13,15 +13,15 @@ namespace Cobalt.WpfUi.Resources;
 /// by adding it to the application's merged dictionaries. It serves as a convenient wrapper
 /// around the pack URI for the main resource dictionary.
 /// </remarks>
-public class SharpBytesControlsDictionary : ResourceDictionary
+public class CobaltControlsDictionary : ResourceDictionary
 {
     private const string DictionaryUri = "pack://application:,,,/Cobalt.WpfUi;component/Resources/Cobalt.WpfUi.xaml";
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="SharpBytesControlsDictionary"/> class.
+    /// Initializes a new instance of the <see cref="CobaltControlsDictionary"/> class.
     /// Automatically sets the Source property to load the Cobalt.WpfUi resource dictionary.
     /// </summary>
-    public SharpBytesControlsDictionary()
+    public CobaltControlsDictionary()
     {
         Source = new Uri(DictionaryUri, UriKind.Absolute);
     }
