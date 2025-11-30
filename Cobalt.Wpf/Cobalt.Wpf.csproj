@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <UseWpf>true</UseWpf>
+        <UseWindowsForms>true</UseWindowsForms>
+        <TargetFrameworks>net472;net6.0-windows</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <LangVersion>14</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cobalt.Wpf.Core\Cobalt.Wpf.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="FolderBrowserEx" Version="1.0.1" />
+        <PackageReference Include="WPF-UI" Version="4.1.0" />
+        <PackageReference Include="WPF-UI.Abstractions" Version="4.1.0" />
+        <PackageReference Include="WPF-UI.DependencyInjection" Version="4.1.0" />
+    </ItemGroup>
+
+</Project>

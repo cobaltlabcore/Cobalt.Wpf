@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <LangVersion>14</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cobalt.Wpf.Core\Cobalt.Wpf.Core.csproj" />
+      <ProjectReference Include="..\Cobalt.Wpf\Cobalt.Wpf.csproj" />
+    </ItemGroup>
+
+</Project>
