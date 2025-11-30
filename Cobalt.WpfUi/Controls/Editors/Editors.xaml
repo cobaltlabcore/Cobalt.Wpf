@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:editors="clr-namespace:Cobalt.WpfUi.Controls.Editors">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Cobalt.WpfUi;component/Controls/Editors/EditorBase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type editors:TextEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:IntEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:UIntEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:ShortEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:UShortEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:LongEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:ULongEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:FloatEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:DoubleEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:DecimalEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    
+    <Style TargetType="{x:Type editors:FileEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:FolderEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    <Style TargetType="{x:Type editors:DataEditor}" BasedOn="{StaticResource {x:Type editors:EditorBase}}" />
+    
+</ResourceDictionary>
