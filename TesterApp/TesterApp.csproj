@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Cobalt.Wpf.Core\Cobalt.Wpf.Core.csproj" />
-      <ProjectReference Include="..\Cobalt.Wpf\Cobalt.Wpf.csproj" />
+      <ProjectReference Include="..\Cobalt.WpfUi.Core\Cobalt.WpfUi.Core.csproj" />
+      <ProjectReference Include="..\Cobalt.WpfUi\Cobalt.WpfUi.csproj" />
     </ItemGroup>
 
 </Project>

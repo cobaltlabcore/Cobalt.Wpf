@@ -4,14 +4,10 @@
         <OutputType>Library</OutputType>
         <UseWpf>true</UseWpf>
         <UseWindowsForms>true</UseWindowsForms>
-        <TargetFrameworks>net472;net6.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows;net9.0-windows;net472</TargetFrameworks>
         <Nullable>enable</Nullable>
         <LangVersion>14</LangVersion>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Cobalt.Wpf.Core\Cobalt.Wpf.Core.csproj" />
-    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -19,6 +15,10 @@
         <PackageReference Include="WPF-UI" Version="4.1.0" />
         <PackageReference Include="WPF-UI.Abstractions" Version="4.1.0" />
         <PackageReference Include="WPF-UI.DependencyInjection" Version="4.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cobalt.WpfUi.Core\Cobalt.WpfUi.Core.csproj" />
     </ItemGroup>
 
 </Project>

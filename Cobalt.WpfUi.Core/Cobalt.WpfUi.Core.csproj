@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <UseWpf>true</UseWpf>
-        <UseWindowsForms>true</UseWindowsForms>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <Nullable>enable</Nullable>
         <LangVersion>14</LangVersion>
